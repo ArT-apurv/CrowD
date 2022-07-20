@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
 import Instance from "./../../utils/ContractInstance";
+import "./AddButton.css";
 
 function AddButton() {
   const [inputValue, setInputValue] = useState();
@@ -31,6 +31,7 @@ function AddButton() {
         setLoading(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
   const handleClick = () => {
@@ -38,22 +39,27 @@ function AddButton() {
   };
 
   return (
-    <form>
-      <input
-        className="input-1"
-        // value={recipientAddress}
-        onChange={(event) => setInputValue(event.value)}
-        placeholder="recipient address"
-      ></input>
-      <Button
-        variant="primary"
-        disabled={isLoading}
-        onClick={!isLoading ? handleClick : null}
-        className="mt-5 ms-5"
-      >
-        {isLoading ? "Loading…" : "Create Campaign"}
-      </Button>
-    </form>
+    <div id="bootstrap-overrides">
+      <form>
+        <div class="inputBar">
+          <input
+            required=""
+            placeholder="Recipient's Address"
+            autoComplete="off"
+            className="input"
+            onChange={(event) => setInputValue(event.target.value)}
+          ></input>
+
+          <button
+            disabled={isLoading}
+            onClick={!isLoading ? handleClick : null}
+            className="button"
+          >
+            {isLoading ? "Loading…" : "Create Campaign"}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 

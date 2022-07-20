@@ -1,12 +1,11 @@
 import { Card, Button, Row, Col } from "react-bootstrap";
 import Instance from "../../utils/ContractInstance";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import AddButton from "../NewCampaigns/AddButton";
+import "./Card.css";
 
 function Cards() {
   const [Address, setAddress] = useState([]);
-  const navigate = useNavigate();
-
   async function getAddress() {
     const z = await Instance.methods.getDeployedCampaigns().call();
 
@@ -18,14 +17,18 @@ function Cards() {
   }, []);
 
   return [
-    <div>
+    <div id="bootstrap-overrides">
+      <div>
+        <AddButton />
+      </div>
       <Row xs={1} md={4} className="g-4 ms-auto container-fluid">
         {Address.map((element, index) => (
           <Col>
             <div>
               <Card
-                className="container-fluid ms-auto mt-3 mb-1"
+                className="container-fluid ms-auto mt-3 mb-1 cardStyle"
                 style={{ width: "18rem" }}
+                key={index + 1}
               >
                 <Card.Body>
                   <Card.Title>Contract {index + 1}</Card.Title>
@@ -37,15 +40,6 @@ function Cards() {
           </Col>
         ))}
       </Row>
-      <div>
-        <Button
-          variant="outline-primary"
-          className="mt-5 ms-5"
-          onClick={() => navigate("create")}
-        >
-          Create Campaigns
-        </Button>
-      </div>
     </div>,
   ];
 }
