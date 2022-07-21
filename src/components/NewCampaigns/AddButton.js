@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Instance from "./../../utils/ContractInstance";
-import "./AddButton.css";
+import "./../Styles/AddButton.css";
 
 function AddButton() {
   const [inputValue, setInputValue] = useState();

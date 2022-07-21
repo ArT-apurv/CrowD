@@ -2,7 +2,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import Instance from "../../utils/ContractInstance";
 import { useEffect, useState } from "react";
 import AddButton from "../NewCampaigns/AddButton";
-import "./Card.css";
+import "./../Styles/Card.css";
 
 function Cards() {
   const [Address, setAddress] = useState([]);
