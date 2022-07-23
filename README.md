@@ -1,4 +1,4 @@
-# CrowDe
+# CrowD
 
 A functional approach to create a decentralized clone of the website [Kickstarter](https://www.kickstarter.com). Backend is written in Solidity `version 0.8.0` and deployed using Hardhat and frontend is designed using React.
 
