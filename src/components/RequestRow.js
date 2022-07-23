@@ -33,14 +33,9 @@ function RequestRow(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const gray = () => {
-    if (props.request[3]) return "text-muted";
-    else return "";
-  };
-
   if (count !== undefined) {
     return (
-      <tr className={gray}>
+      <tr className={props.request[3] && "text-muted"}>
         <td>{props.id + 1}</td>
         <td>{props.request[0]}</td>
         <td>{web3.utils.fromWei(props.request[1], "ether")}</td>

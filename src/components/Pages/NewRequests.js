@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import CampaignInstance from "../../utils/CampaignsInstance";
 import ShowError from "./ShowError";
+import "./../Styles/NewCampaigns.css";
 const Web3 = require("web3");
 
 function NewRequests() {
@@ -39,47 +40,51 @@ function NewRequests() {
       <Navbar />
       <Button
         variant="primary"
-        className="button"
+        className="button3"
         onClick={() => {
           navigate(`/campaigns/${address}/requests`);
         }}
       >
         Back
       </Button>
-      <h3>Create a Request</h3>
-      <Form onSubmit={submit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            defaultValue={description}
-            onChange={(event) => {
-              setDescription(event.target.value);
-            }}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Value in Ethers</Form.Label>
-          <Form.Control
-            defaultValue={value}
-            onChange={(event) => {
-              setValue(event.target.value);
-            }}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Recipient</Form.Label>
-          <Form.Control
-            defaultValue={recipient}
-            onChange={(event) => {
-              setRecipient(event.target.value);
-            }}
-          />
-        </Form.Group>
-        <Button className="button2" type="submit">
-          {loading ? "Loading..." : "Add Request"}
-        </Button>
-      </Form>
-      {showError && <ShowError message={showError} />}
+      <div className="contribution">
+        <div className="contributionWrapper">
+          <h3>Create a Request</h3>
+          <Form onSubmit={submit}>
+            <Form.Group className="mb-3">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                defaultValue={description}
+                onChange={(event) => {
+                  setDescription(event.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Value in Ethers</Form.Label>
+              <Form.Control
+                defaultValue={value}
+                onChange={(event) => {
+                  setValue(event.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Recipient</Form.Label>
+              <Form.Control
+                defaultValue={recipient}
+                onChange={(event) => {
+                  setRecipient(event.target.value);
+                }}
+              />
+            </Form.Group>
+            <Button className="button2" type="submit">
+              {loading ? "Loading..." : "Add Request"}
+            </Button>
+          </Form>
+          {showError && <ShowError message={showError} />}
+        </div>
+      </div>
     </div>
   );
 }

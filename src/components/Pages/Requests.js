@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button, Table } from "react-bootstrap";
 import CampaignInstance from "../../utils/CampaignsInstance";
 import RequestRow from "../RequestRow";
+import "./../Styles/NewCampaigns.css";
 
 function Requests() {
   const params = useParams();
@@ -29,7 +30,7 @@ function Requests() {
 
   useEffect(() => {
     const requests = async () => {
-      const array = new Array(numOfRequest);
+      const array = new Array(parseInt(numOfRequest));
       for (let i = 0; i < numOfRequest; i++) {
         const request = await campaign.methods.requests(i).call();
         array[i] = request;
@@ -46,40 +47,49 @@ function Requests() {
         <Navbar />
         <Button
           variant="primary"
-          className="button"
+          className="button3"
           onClick={() => {
             navigate(`/campaigns/${address}/requests/new`);
           }}
         >
           Add Requests
         </Button>
-        <Table striped bordered hover className="text-center">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Recipient Address</th>
-              <th>Approval Count</th>
-              <th>Approve</th>
-              <th>Finalize</th>
-            </tr>
-          </thead>
-          {arrays.map((element, index) => {
-            return (
-              <tbody>
-                {
-                  <RequestRow
-                    key={index}
-                    id={index}
-                    request={element}
-                    address={address}
-                  />
-                }
-              </tbody>
-            );
-          })}
-        </Table>
+        <div className="contribution">
+          <div className="contributionWrapper">
+            <h3>Requests</h3>
+            <Table
+              hover
+              className="text-center"
+              style={{ marginTop: "20px", backgroundColor: "#e8e8e8" }}
+            >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Recipient Address</th>
+                  <th>Approval Count</th>
+                  <th>Approve</th>
+                  <th>Finalize</th>
+                </tr>
+              </thead>
+              {arrays.map((element, index) => {
+                return (
+                  <tbody>
+                    {
+                      <RequestRow
+                        key={index}
+                        id={index}
+                        request={element}
+                        address={address}
+                      />
+                    }
+                  </tbody>
+                );
+              })}
+            </Table>
+          </div>
+        </div>
       </div>
     );
   } else {
@@ -88,14 +98,18 @@ function Requests() {
         <Navbar />
         <Button
           variant="primary"
-          className="button"
+          className="button3"
           onClick={() => {
             navigate(`/campaigns/${address}/requests/new`);
           }}
         >
           Add Requests
         </Button>
-        Requests
+        <div className="contribution">
+          <div className="contributionWrapper">
+            <h3>Requests</h3>
+          </div>
+        </div>
       </div>
     );
   }

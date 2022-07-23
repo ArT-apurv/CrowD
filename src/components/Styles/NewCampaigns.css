@@ -46,3 +46,46 @@
   opacity: 4;
   right: 0;
 }
+
+.button3 {
+  display: inline-block;
+  position: absolute;
+  left: 84.5vw;
+  top: 8.5vh;
+  border-radius: 7px;
+  border: none;
+  background: #1875ff;
+  color: white;
+  font-family: inherit;
+  text-align: center;
+  font-size: 13px;
+  box-shadow: 0px 14px 56px -11px #1875ff;
+  width: 10em;
+  padding: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.button3 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button3 span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.button3:hover span {
+  padding-right: 3.55em;
+}
+
+.button3:hover span:after {
+  opacity: 4;
+  right: 0;
+}
