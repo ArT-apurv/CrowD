@@ -1,11 +1,10 @@
 #navbar {
   color: rgb(13, 26, 38);
-  position: fixed;
   top: 0;
   height: 60px;
   line-height: 60px;
   width: 100%;
-  /* z-index: 10; */
+  margin-bottom: 20px;
 }
 
 .link {
@@ -16,9 +15,9 @@
 }
 
 .nav-wrapper {
-  margin: auto auto 20px auto;
+  margin: auto;
   text-align: center;
-  width: 70%;
+  width: 93.8%;
 }
 @media (max-width: 768px) {
   .nav-wrapper {

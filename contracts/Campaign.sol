@@ -26,7 +26,7 @@ contract Campaign {
     }
 
     uint256 numRequests;
-    mapping(uint256 => Request) requests;
+    mapping(uint256 => Request) public requests;
     address public manager;
     uint256 public minimumContribution;
     mapping(address => bool) public approvers;
@@ -81,4 +81,19 @@ contract Campaign {
         request.recipient.transfer(request.value);
         request.complete = true;
     }
+
+    function getSummary() public view returns (uint, uint, uint, uint, address){
+        return(
+            minimumContribution,
+            address(this).balance,
+            numRequests,
+            approversCount,
+            manager
+        );
+    }
+
+    function getRequestsCount() public view returns (uint){
+        return numRequests;
+    }
+
 }

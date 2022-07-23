@@ -7,7 +7,7 @@ function AddButton() {
   async function simulateNetworkRequest() {
     const x = Instance.methods
       .createCampaign(inputValue)
-      .send({ from: "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266" });
+      .send({ from: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707" });
 
     return x;
   }
@@ -41,7 +41,7 @@ function AddButton() {
   return (
     <div id="bootstrap-overrides">
       <form>
-        <div class="inputBar">
+        <div className="inputBar">
           <input
             required=""
             placeholder="Recipient's Address"

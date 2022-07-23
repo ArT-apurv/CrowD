@@ -1,0 +1,74 @@
+#bootstrap-overrides {
+  width: 100%;
+}
+
+.cardWrapper {
+  width: 90%;
+  margin: auto;
+}
+
+#bootstrap-overrides .cardStyle {
+  width: 190px;
+  height: 200px;
+  border-radius: 30px;
+  border-color: #e0e0e0;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+
+.ph-card-header {
+  color: white !important;
+  background-color: navy !important;
+}
+
+#card-header-color {
+  background-color: #e0e0e0 !important;
+}
+
+.button {
+  display: inline-block;
+  position: absolute;
+  left: 84vw;
+  top: 8.5vh;
+  margin: 10px;
+  border-radius: 7px;
+  border: none;
+  background: #1875ff;
+  color: white;
+  font-family: inherit;
+  text-align: center;
+  font-size: 13px;
+  box-shadow: 0px 14px 56px -11px #1875ff;
+  width: 10em;
+  padding: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.button:hover span {
+  padding-right: 3.55em;
+}
+
+.button:hover span:after {
+  opacity: 4;
+  right: 0;
+}
+
+.inputBar {
+  margin-top: 60px !important;
+}

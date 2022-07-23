@@ -16,10 +16,11 @@ function Navbar() {
           <li>
             <Link to="/">Home</Link>
           </li>
-        </ul>
-        <ul id="menu">
           <li>
             <Link to="/Campaigns">Campaigns</Link>
+          </li>
+          <li>
+            <Link to="/Campaigns/New">New</Link>
           </li>
         </ul>
       </div>
